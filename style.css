@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+:root {
+    --color-text: #abb2bf;
+    --color-text-on: #fff;
+    --color-b1: #282c33;
+    --color-b2: #c470db;
+    --font-main:'Source Code Pro', monospace;
+    --big-font-size: 2rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .75rem;
+    /*===== weight =====*/
+    --text-active: 600;
+    /*===== Margenes =====*/
+    --mb-2: 1rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+    /*===== z index =====*/
+    --z-back: -10;
+    --z-fixed: 100;
+}
+
+span{
+    color: var(--color-b2);
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, p, h3{
+    margin: 0;
+    color: #fff;
+}
+
+a{
+    text-decoration: none ;
+}
+
+a:hover{
+    color: #fff;
+}
+
+button{
+    appearance: none;
+    border: 1px solid var(--color-b2);
+}
+
+body{
+    margin: 0;
+    background-color: var(--color-b1);
+    font-family:var(--font-main);
+}
+
+/*== Navigation ==*/
+.nav{
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.header {
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    background-color: var(--color-b1);
+    z-index: var(--z-fixed);
+}
+
+.nav_list{
+    display: flex;
+    padding-top: 0;
+    margin-bottom: 10px;
+}
+
+.nav_item {
+    margin-right: var(--mb-2);
+    margin-bottom: 0;
+}
+
+.nav_toggle{
+    position: fixed;
+    right: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.nav_link::before{
+    content: "#_";
+    color: var(--color-b2);
+}
+
+.nav_link{
+    color: var(--color-text);
+}
+
+.n-active{
+    font-weight: var(--text-active);
+    color:#fff;
+}
+
+.logo{
+    margin-left: 2rem;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+display: none;
+}
+
+.hamburger svg {
+/* The size of the SVG defines the overall size */
+    height: 3em;
+/* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1;
+/* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+
+.button:hover{
+    background-color: hsl(287 60% 65%/0.1);
+    color: var(--color-b2);
+}
+
+.button{
+    display: inline-block;
+    border: 1px solid var(--color-b2);
+    padding: 8px 16px;
+    color: #fff;
+}
+
+.h2::before{
+    content: "#_";
+    color: var(--color-b2);
+}
+
+.h2::after{
+    content: "────────";
+    color: var(--color-b2);
+    display: block;
+    position: absolute;
+    transform: translate(160%, -90%);
+}
+
+.projects-link{
+    text-decoration: underline;
+    color: var(--color-text);
+}
+
+.card-project {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border: 1.3px solid var(--color-b2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.header-card {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.title:hover {
+    text-decoration: underline royalblue;
+}
+
+.image {
+    display: block;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    border: 1px solid #c470db;
+}
+
+.description-card {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgb(219, 218, 218);
+}
+
+.post-info {
+    margin-top: 1.5rem;
+    display: flex;
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+
+.cr {
+    display: flex;
+    flex-direction: column;
+}
+
+.dt {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #abb2bf;
+}
+
+.dd {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #abb2bf;
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 600px ) {
+
+}
+
+@media screen and (max-width: 768px) {
+.nav_item{
+    margin-bottom: 1rem;
+    align-items: end;
+}
+
+.nav_list{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    font-size: 24px;
+    left: 4rem;
+    row-gap: 1.2rem;
+}
+
+.nav_menu {
+    position: fixed;
+    top: 3rem;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    transition: .5s;
+    background-color: var(--color-b1);
+    backdrop-filter: blur(8px);
+}
+
+.social_icon{
+    position: fixed;
+    bottom: 3.8rem;
+    right: -100%;
+    width: 100px;
+    transition: .5s;
+}
+
+.media_icons{
+    font-size: 48px;
+}
+
+.media_icon{
+    font-size: 43px; 
+}
+
+.show {
+    right: 0;
+}
+
+.social_icon.show {
+    right: 45%;
+}
+
+.logo{
+    height: 1.8rem;
+    width: auto;
+    margin-top: 1rem;
+}
+
+.programming {
+    width: 100%;
+    height: auto;
+}
+
+.undraw{
+    width: 80%;
+}
+
+.image{
+    height: 3rem;
+    width: 3rem;
+}
+
+.media_icont{
+   margin-left: 3rem;
+}
+
+.nonphone {
+    display: none;
+}
+}
+
+@media screen and (min-width: 768px) {
+/*=== Nav ===*/  
+.logo{
+    height: 1.9rem;
+    margin-top: 0.5rem;
+}    
+
+.nav_menu{
+    position: fixed;
+    right: 3rem;
+    margin-top: 0.5rem;
+}
+
+.nav_item{
+    margin-right: 2rem;
+    font-size: var(--h2-font-size);
+}
+
+.social_icons{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  right: 2rem;
+  gap: 8px;
+  top: 0rem;
+}
+
+.social_line {
+    width: 1px;
+    height: 33vh;
+    background-color: var(--color-text);
+    display: block;
+}
+
+.media_icons{
+    font-size: 32px;
+}
+
+.undraw{
+    width: 40%;
+    position: absolute;
+    right: 3rem;
+    padding: 2rem;
+}
+
+.home_text{
+    display: block;
+    margin-top: 7rem;
+}
+
+.image{
+    height: 4rem;
+    width: 4rem;
+}
+
+.media_icon{
+    font-size: 53px;  
+}
+
+.media_icont{
+    margin-left: 25%;    
+}
+
+.nonpc {
+    display: none;
+}
+
+}
+
+@media screen and (min-width: 992px) {}
+
+
